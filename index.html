@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeki | Profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(45deg, 
+                rgba(255,0,255,0.8), 
+                rgba(0,255,255,0.8), 
+                rgba(255,0,255,0.8));
+            background-size: 400% 400%;
+            animation: gradient-flow 15s ease infinite;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Arka Plan Işık Efektleri */
+        .light-effect {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, 
+                rgba(255,255,255,0.15) 0%, 
+                rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        /* Animasyonlar */
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* İçerik Stilleri */
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            margin: 20px;
+            border-radius: 15px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            text-shadow: 0 0 15px #00ffff,
+                         0 0 30px #00ffff;
+            animation: text-glow 2s ease-in-out infinite alternate;
+            margin: 20px 0;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        @keyframes text-glow {
+            from { text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff; }
+            to { text-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff; }
+        }
+
+        /* Sosyal Medya Bölümü */
+        .social-links {
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2.2em;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .username {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.5em;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links a:hover .username {
+            opacity: 1;
+        }
+
+        /* Renk Özelleştirmeleri */
+        .fa-instagram { color: #e1306c; }
+        .fa-github { color: #6e5494; }
+        .fa-youtube { color: #ff0000; }
+    </style>
+</head>
+<body>
+    <!-- Arka Plan Işık Efektleri -->
+    <div class="light-effect" style="top:20%; left:10%;"></div>
+    <div class="light-effect" style="top:60%; right:15%;"></div>
+
+    <div class="header">
+        <h1>Hakkımda</h1>
+        <p>
+            Merhaba, ben Zeki. Lise öğrencisiyim ve teknolojiye ilgi duyuyorum. 
+            Bilgisayar başında vakit geçirmeyi seviyorum. Hedefim gelecekte 
+            bilgisayar mühendisliği okumak ve oyun geliştirme alanında çalışmak.
+        </p>
+    </div>
+
+    <div class="social-links">
+        <a href="https://instagram.com/kafisli" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span class="username">@kafisli</span>
+        </a>
+        <a href="https://github.com/kafislimil" target="_blank">
+            <i class="fab fa-github"></i>
+            <span class="username">@kafislimil</span>
+        </a>
+        <a href="https://youtube.com/@kafisli" target="_blank">
+            <i class="fab fa-youtube"></i>
+            <span class="username">@Kafisli</span>
+        </a>
+    </div>
+</body>
+</html>
